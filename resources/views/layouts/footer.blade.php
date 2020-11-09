@@ -4,7 +4,7 @@
             <div class="col-sm-6">
                 <script>document.write(new Date().getFullYear())</script> © Hyphen Plus
             </div>
->
+
         </div>
     </div>
 </footer>

@@ -1,23 +1,23 @@
 <header id="page-topbar">
+<style>
+.navbar-brand-box {
+  padding: 0 1rem !important;
+  text-align: center;
+  width: 250px;
+}
+</style>
+
     <div class="navbar-header">
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="index" class="logo logo-dark">
-                    <span class="logo-sm">
-                        <img src="assets/images/logo.svg" alt="" height="22">
-                    </span>
-                    <span class="logo-lg">
-                        <img src="assets/images/logo-dark.png" alt="" height="17">
-                    </span>
-                </a>
 
                 <a href="index" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-light.svg" alt="" height="22">
+                        <img src="{{ URL::asset('assets/images/logo-light.svg')}}" alt="" height="40">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-light.png" alt="" height="22   ">
+                        <img src="{{ URL::asset('assets/images/logo-light.png')}}" alt="" height="19">
                     </span>
                 </a>
             </div>
@@ -35,14 +35,14 @@
             </form>
 
             <div class="dropdown dropdown-mega d-none d-lg-block ml-2">
-         
+
                 <div class="dropdown-menu dropdown-megamenu">
                     <div class="row">
                         <div class="col-sm-8">
-                
-                                
+
+
                         </div>
-             
+
                     </div>
 
                 </div>
@@ -58,13 +58,15 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
                     aria-labelledby="page-header-search-dropdown">
-                    
+
                     <form class="p-3">
                         <div class="form-group m-0">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                <input type="text" class="form-control" placeholder="Search ..."
+                                    aria-label="Recipient's username">
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                                    <button class="btn btn-primary" type="submit"><i
+                                            class="mdi mdi-magnify"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -72,15 +74,16 @@
                 </div>
             </div>
 
-           
-           
-           
 
-      
+
+
+
+
 
             <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn header-item noti-icon waves-effect"
+                    id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
                     <i class="bx bx-bell bx-tada"></i>
                     <span class="badge badge-danger badge-pill">3</span>
                 </button>
@@ -115,8 +118,8 @@
                         </a>
                         <a href="" class="text-reset notification-item">
                             <div class="media">
-                                <img src="assets/images/users/avatar-3.jpg"
-                                    class="mr-3 rounded-circle avatar-xs" alt="user-pic">
+                                <img src="{{ URL::asset('assets/images/users/avatar-3.jpg')}}" class="mr-3 rounded-circle avatar-xs"
+                                    alt="user-pic">
                                 <div class="media-body">
                                     <h6 class="mt-0 mb-1">James Lemire</h6>
                                     <div class="font-size-12 text-muted">
@@ -145,8 +148,8 @@
 
                         <a href="" class="text-reset notification-item">
                             <div class="media">
-                                <img src="assets/images/users/avatar-4.jpg"
-                                    class="mr-3 rounded-circle avatar-xs" alt="user-pic">
+                                <img src="{{ URL::asset('assets/images/users/avatar-4.jpg')}}" class="mr-3 rounded-circle avatar-xs"
+                                    alt="user-pic">
                                 <div class="media-body">
                                     <h6 class="mt-0 mb-1">Salena Layfield</h6>
                                     <div class="font-size-12 text-muted">
@@ -166,29 +169,37 @@
             </div>
 
             <div class="dropdown d-inline-block">
+            
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg"
+                    <img class="rounded-circle header-profile-user" src="{{ URL::asset('assets/images/users/avatar-2.jpg')}}"
                         alt="Header Avatar">
-                    <span class="d-none d-xl-inline-block ml-1">Nantadech</span>
+                    <span class="d-none d-xl-inline-block ml-1">{{ Auth::user()->username }}</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
                     <!-- item-->
-                    <a class="dropdown-item" href="contacts-profile"><i class="bx bx-user font-size-16 align-middle mr-1"></i> Profile</a>
+                    <a class="dropdown-item" href="contacts-profile"><i
+                            class="bx bx-user font-size-16 align-middle mr-1"></i> Profile</a>
 
-                    <a class="dropdown-item d-block" href="setting"><span class="badge badge-success float-right">11</span><i class="bx bx-wrench font-size-16 align-middle mr-1"></i> Settings</a>
+                    <a class="dropdown-item d-block" href="setting"><span
+                            class="badge badge-success float-right">11</span><i
+                            class="bx bx-wrench font-size-16 align-middle mr-1"></i> Settings</a>
 
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" href="javascript:void();" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> {{ __('Logout') }} </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    <a class="dropdown-item text-danger" href="javascript:void();"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
+                            class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i>
+                        {{ __('Logout') }} </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                        style="display: none;">
                         @csrf
                     </form>
                 </div>
             </div>
 
 
-            
+
         </div>
     </div>
 </header>

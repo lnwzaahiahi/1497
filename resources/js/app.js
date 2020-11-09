@@ -29,6 +29,7 @@ File: Main Js File
         });
     }
 
+    
     function initActiveMenu() {
         // === following js will activate the menu in left side bar based on url ====
         $("#sidebar-menu a").each(function () {

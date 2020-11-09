@@ -115,7 +115,7 @@ $("input[name='demo_vertical']").TouchSpin({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\VWorks\findworkr-findworkr_admin-6b45364ca380\resources\js\pages\ecommerce-cart.init.js */"./resources/js/pages/ecommerce-cart.init.js");
+module.exports = __webpack_require__(/*! C:\Users\Com\Desktop\dzknow\findworkr\resources\js\pages\ecommerce-cart.init.js */"./resources/js/pages/ecommerce-cart.init.js");
 
 
 /***/ })

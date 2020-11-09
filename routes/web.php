@@ -17,19 +17,19 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('pages-login', 'SkoteController@index');
-Route::get('pages-login-2', 'SkoteController@index');
-Route::get('pages-register', 'SkoteController@index');
-Route::get('pages-register-2', 'SkoteController@index');
-Route::get('pages-recoverpw', 'SkoteController@index');
-Route::get('pages-recoverpw-2', 'SkoteController@index');
-Route::get('pages-lock-screen', 'SkoteController@index');
-Route::get('pages-lock-screen-2', 'SkoteController@index');
-Route::get('pages-404', 'SkoteController@index');
-Route::get('pages-500', 'SkoteController@index');
-Route::get('pages-maintenance', 'SkoteController@index');
-Route::get('pages-comingsoon', 'SkoteController@index');
+Route::get('pages-login', 'HphController@index');
+Route::get('pages-register', 'HphController@index');
+Route::get('pages-404', 'HphController@index');
+Route::get('pages-500', 'HphController@index');
 
-Route::post('keep-live', 'SkoteController@live');
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('roles','RoleController');
+    Route::resource('users','UserController');
+   
 
+});
+Route::resource('subject','SubjectController');
+ Route::resource('permission','PermissionController');
 Route::get('{any}', 'HomeController@index');
+
+Route::get('/home', 'HomeController@index')->name('home');

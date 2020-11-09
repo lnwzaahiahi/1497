@@ -57,5 +57,26 @@
 
     <!-- JAVASCRIPT -->
     @include('layouts.footer-script')
+
+
+
+    @section('script')
+    <!-- twitter-bootstrap-wizard js -->
+    <script
+        src="{{ URL::asset('assets/libs/twitter-bootstrap-wizard/twitter-bootstrap-wizard.min.js') }}">
+    </script>
+
+    <!-- form mask -->
+    <script src="{{ URL::asset('assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
+
+    <!-- form mask init -->
+    <script src="{{ URL::asset('assets/js/pages/form-wizard.init.js') }}"></script>
+
+
+
+    <!-- Plugins js -->
+    <script src="{{ URL::asset('assets/libs/dropzone/dropzone.min.js') }}"></script>
+
+    @endsection
     </body>
 </html>

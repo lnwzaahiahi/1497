@@ -153,7 +153,7 @@ chart.render();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\VWorks\findworkr-findworkr_admin-6b45364ca380\resources\js\pages\profile.init.js */"./resources/js/pages/profile.init.js");
+module.exports = __webpack_require__(/*! C:\Users\Com\Desktop\dzknow\findworkr\resources\js\pages\profile.init.js */"./resources/js/pages/profile.init.js");
 
 
 /***/ })
